@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Readmaniac/todolist-react/static/css/main.af9eb3e2.css",
+    "main.js": "/Readmaniac/todolist-react/static/js/main.040df164.js",
+    "index.html": "/Readmaniac/todolist-react/index.html",
+    "main.af9eb3e2.css.map": "/Readmaniac/todolist-react/static/css/main.af9eb3e2.css.map",
+    "main.040df164.js.map": "/Readmaniac/todolist-react/static/js/main.040df164.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af9eb3e2.css",
+    "static/js/main.040df164.js"
+  ]
+}
