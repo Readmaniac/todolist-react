@@ -9,16 +9,23 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (text) => {
-    const newTodo = {
+    setTodos([...todos, createNewTodo(text)]);
+  };
+
+  const createNewTodo = (text) => {
+    return {
       text: text,
       isComplited: false,
       id: uuidv4(),
     };
-    setTodos([...todos, newTodo]);
   };
 
   const deleteTodoHandler = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  const copyTodoHandler = (todo) => {
+    setTodos(copyTodo(todos, todos.indexOf(todo), createNewTodo(todo.text)));
   };
 
   const toggleTodoHandler = (id) => {
@@ -41,6 +48,11 @@ function App() {
 
   const complitedTodosCount = todos.filter((todo) => todo.isComplited).length;
 
+  function copyTodo(arr, toIndex, addedTodo) {
+    arr.splice(toIndex, 0, addedTodo);
+    return [...arr];
+  }
+
   return (
     <div className="App">
       <h1>Todo App</h1>
@@ -56,6 +68,7 @@ function App() {
         todos={todos}
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
+        copyTodo={copyTodoHandler}
       />
       {complitedTodosCount > 0 && (
         <h2>{`You have completed ${complitedTodosCount} ${

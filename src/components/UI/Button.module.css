@@ -2,13 +2,13 @@
   margin-left: 20px;
   height: 50px;
   cursor: pointer;
-  background-color: beige;
+  background-color: #c2ebb9;
   font-size: 1.5rem;
   padding: 10px 15px;
-  border: none;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
 .button:hover {
-  background-color: rgb(240, 240, 155);
+  background-color: #5dcf84;
 }
