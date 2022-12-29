@@ -3,7 +3,9 @@ import styles from './TodoForm.module.css';
 import Button from '../UI/Button';
 
 function TodoForm({ addTodo }) {
+  //хук для стартового значения и его изменения
   const [text, setText] = useState('');
+  //делаем поле ввода контролируемым
   const onSubmitHandler = (event) => {
     event.preventDefault();
     addTodo(text);
