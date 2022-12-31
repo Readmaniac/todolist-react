@@ -1,7 +1,14 @@
-import Todo from './Todo';
-import styles from './TodoList.module.css';
+import Todo from './Todo'
+import styles from './TodoList.module.css'
 
-function TodoList({ todos, deleteTodo, toggleTodo, copyTodo, changeTodo }) {
+function TodoList({
+  todos,
+  deleteTodo,
+  toggleTodo,
+  copyTodo,
+  moveTodo,
+  changeTodo,
+}) {
   return (
     <div className={styles.todoListContainer}>
       {!todos.length && <h2>Todo list is empty</h2>}
@@ -12,10 +19,11 @@ function TodoList({ todos, deleteTodo, toggleTodo, copyTodo, changeTodo }) {
           deleteTodo={deleteTodo}
           toggleTodo={toggleTodo}
           copyTodo={copyTodo}
+          moveTodo={moveTodo}
         />
       ))}
     </div>
-  );
+  )
 }
 
-export default TodoList;
+export default TodoList

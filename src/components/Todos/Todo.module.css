@@ -35,6 +35,22 @@
   color: gray;
 }
 
+.moveIconContainer {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.moveIcon {
+  cursor: pointer;
+  color: lightgrey;
+}
+
+.moveIcon:hover {
+  color: green;
+}
+
 .checkIcon,
 .deleteIcon {
   cursor: pointer;

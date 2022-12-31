@@ -2,19 +2,32 @@ import {
   RiTodoFill,
   RiDeleteBin2Line,
   RiFileCopy2Fill,
+  RiArrowDownSFill,
+  RiArrowUpSFill,
   RiBallPenLine,
-} from 'react-icons/ri';
-import { FaCheck } from 'react-icons/fa';
-import styles from './Todo.module.css';
+} from 'react-icons/ri'
+import { FaCheck } from 'react-icons/fa'
+import styles from './Todo.module.css'
 
-function Todo({ todo, deleteTodo, toggleTodo, copyTodo }) {
+function Todo({ todo, deleteTodo, toggleTodo, copyTodo, moveTodo }) {
   return (
     <div
       className={`${styles.todo} ${
         todo.isComplited ? styles.completedTodo : ''
       }`}
     >
-      <RiTodoFill className={styles.todoIcon} />
+      <div className={styles.moveIconContainer}>
+        <RiArrowUpSFill
+          className={styles.moveIcon}
+          onClick={() => moveTodo({ todo, dir: '-1' })}
+        />
+        <RiArrowDownSFill
+          className={styles.moveIcon}
+          onClick={() => moveTodo({ todo, dir: '1' })}
+        />
+      </div>
+      {/* <RiTodoFill className={styles.todoIcon} /> */}
+
       <div className={styles.todoText}>{todo.text}</div>
       <RiFileCopy2Fill
         className={styles.checkIcon}
@@ -29,7 +42,7 @@ function Todo({ todo, deleteTodo, toggleTodo, copyTodo }) {
         onClick={() => toggleTodo(todo.id)}
       />
     </div>
-  );
+  )
 }
 
-export default Todo;
+export default Todo
